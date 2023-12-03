@@ -22,10 +22,10 @@ app.get('/health', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.json({message: 'Hello World'});
+    res.json({message: 'Hello World from catalog'});
 });
 
-const port = process.env.CATALOGUE_SERVER_PORT || '8080';
+const port = process.env.CATALOG_SERVER_PORT || '8080';
 app.listen(port, () => {
     logger.info('Started on port', port);
 });
