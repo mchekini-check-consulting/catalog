@@ -1,0 +1,19 @@
+version: '2'
+services:
+  catalog-db:
+    image: postgres
+    container_name: staff-manager-db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+  catalog-app:
+    build:
+      context: .
+    container_name: catalog-app
+    ports:
+      - "8085:8080"
+    environment:
+      - DB_HOST=catalog-db
