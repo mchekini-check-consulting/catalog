@@ -11,7 +11,7 @@ const client = new Client({
 
 
 const runSqlScript = () => {
-    fs.readFile('init_data.sql', 'utf8', (err, sql) => {
+    fs.readFile('./init_data.sql', 'utf8', (err, sql) => {
         if (err) {
             console.error('Erreur lors de la lecture du fichier SQL:', err);
             return;
